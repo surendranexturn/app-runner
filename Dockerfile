@@ -16,6 +16,10 @@ ENV LD_LIBRARY_PATH=/opt/oracle/instantclient_19_13:$LD_LIBRARY_PATH
 # Set up your application
 WORKDIR /app
 COPY . .
+
+# Install additional file oracle.js
+COPY index.js /app/index.js
+
 RUN npm install
 
 CMD ["npm", "start"]
